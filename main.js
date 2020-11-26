@@ -1,4 +1,5 @@
 const fs = require('fs');
+const GameBoard = require('./gameBoard');
 
 if (require.main === module) {
     let filename = process.argv[2];
@@ -28,4 +29,10 @@ if (require.main === module) {
     for(; i<=numOfUsers; i++) {
         users.push(inputData[i]);
     }
+
+    //Method to print ans
+    GameBoard.setUsers(users);
+    GameBoard.setLadders(ladders);
+    GameBoard.setLadders(snakes);
+    GameBoard.getWinner();
 }
