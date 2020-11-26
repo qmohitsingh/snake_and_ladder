@@ -33,6 +33,6 @@ if (require.main === module) {
     //Method to print ans
     GameBoard.setUsers(users);
     GameBoard.setLadders(ladders);
-    GameBoard.setLadders(snakes);
+    GameBoard.setSnakes(snakes);
     GameBoard.getWinner();
 }
