@@ -1,5 +1,8 @@
-const fs = require('fs');
-const GameBoard = require('./gameBoard');
+const fs        = require('fs');
+const Users     = require('./model/users');
+const Snakes    = require('./model/snakes');
+const Ladders   = require('./model/ladders');
+const GameService= require('./service/GameService');
 
 if (require.main === module) {
     let filename = process.argv[2];
@@ -30,9 +33,10 @@ if (require.main === module) {
         users.push(inputData[i]);
     }
 
-    //Method to print ans
-    GameBoard.setUsers(users);
-    GameBoard.setLadders(ladders);
-    GameBoard.setSnakes(snakes);
-    GameBoard.getWinner();
+    Users.setUsers(users);
+    Snakes.setSnakes(snakes);
+    Ladders.setLadders(ladders);
+
+    GameService.startGame();
+
 }
